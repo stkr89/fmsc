@@ -1,16 +1,16 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="fmsc.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="fmsc.Register" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>FMSC | Login</title>
+    <title>FMSC | Register</title>
     <% Response.WriteFile("~/views/header.html"); %>
 </head>
-<body>    
+<body>
     <form id="form1" runat="server">
     <div class="container padding-top-20">
-        <h3>Log In</h3>
+        <h3>Register</h3>
         <div class="row">
             <div class="col-md-4">
                 <fieldset class="form-group">
@@ -23,7 +23,7 @@
                 </fieldset>
                 <button type="submit" class="btn btn-primary">Login</button>
                 or
-                <a href="Register.aspx" class="pull-right">Sign Up</a>
+                <a href="#" class="pull-right">Sign Up</a>
             </div>
         </div>                
     </div>
