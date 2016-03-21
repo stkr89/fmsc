@@ -46,17 +46,17 @@
                     <asp:TextBox type="text" ID="address2" runat="server" class="form-control input-sm" placeholder="Enter address2"></asp:TextBox>
                 </fieldset>
                 <fieldset class="form-group col-md-6">
-                    <label for="city">City</label>
-                    <asp:TextBox type="text" ID="city" runat="server" class="form-control input-sm" placeholder="Enter city"></asp:TextBox>
-                </fieldset>
+                    <label for="country">Country</label>
+                    <asp:TextBox type="text" ID="country" runat="server" class="form-control input-sm" placeholder="Enter country"></asp:TextBox>
+                </fieldset>                
                 <fieldset class="form-group col-md-6">
                     <label for="state">State</label>
                     <asp:TextBox type="text" ID="state" runat="server" class="form-control input-sm" placeholder="Enter state"></asp:TextBox>
-                </fieldset>
+                </fieldset>     
                 <fieldset class="form-group col-md-6">
-                    <label for="country">Country</label>
-                    <asp:TextBox type="text" ID="country" runat="server" class="form-control input-sm" placeholder="Enter country"></asp:TextBox>
-                </fieldset>
+                    <label for="city">City</label>
+                    <asp:TextBox type="text" ID="city" runat="server" class="form-control input-sm" placeholder="Enter city"></asp:TextBox>
+                </fieldset>           
                 <fieldset class="form-group col-md-6">
                     <label for="zip">Zip</label>
                     <asp:TextBox type="text" ID="zip" runat="server" class="form-control input-sm" placeholder="Enter zip"></asp:TextBox>

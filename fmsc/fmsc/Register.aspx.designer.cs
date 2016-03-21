@@ -94,13 +94,13 @@ namespace fmsc {
         protected global::System.Web.UI.WebControls.TextBox address2;
         
         /// <summary>
-        /// city control.
+        /// country control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox city;
+        protected global::System.Web.UI.WebControls.TextBox country;
         
         /// <summary>
         /// state control.
@@ -112,13 +112,13 @@ namespace fmsc {
         protected global::System.Web.UI.WebControls.TextBox state;
         
         /// <summary>
-        /// country control.
+        /// city control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox country;
+        protected global::System.Web.UI.WebControls.TextBox city;
         
         /// <summary>
         /// zip control.
