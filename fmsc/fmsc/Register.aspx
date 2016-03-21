@@ -8,7 +8,7 @@
     <% Response.WriteFile("~/views/header.html"); %>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" method="post" action="Register.aspx"> 
     <div class="container padding-top-20">
         <h3>Register</h3>
         <div class="row">
