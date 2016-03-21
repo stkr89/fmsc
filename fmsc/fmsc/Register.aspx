@@ -21,9 +21,7 @@
                     <label for="password">Password</label>
                     <input type="password" class="form-control input-sm" id="password" placeholder="Enter password">
                 </fieldset>
-                <button type="submit" class="btn btn-primary">Login</button>
-                or
-                <a href="#" class="pull-right">Sign Up</a>
+                <button type="submit" class="btn btn-primary">Register</button>
             </div>
         </div>                
     </div>
