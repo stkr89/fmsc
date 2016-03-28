@@ -25,6 +25,6 @@
     </form>
 </body>
 <script>
-    var allDonations = "<%= allDonations %>";
+    var allDonations = '<%= allDonations %>';
 </script>
 </html>
