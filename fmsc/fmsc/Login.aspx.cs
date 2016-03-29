@@ -1,4 +1,6 @@
-﻿using System;
+﻿using fmsc.DAO;
+using fmsc.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,20 @@ namespace fmsc
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(IsPostBack)
+            {
+                User user = new LoginDao().login(Request.Form["email"], Request.Form["password"]);
 
+                if (user != null)
+                {
+                    Session["user"] = user;
+                    Response.Redirect("Donate.aspx");
+                }
+                else
+                {
+                    statusDiv.Visible = true;
+                }
+            }
         }
     }
 }

@@ -16,3 +16,7 @@ html, body, .container-table {
     display: table-cell;
     vertical-align: middle;
 }
+
+.marginn-top-20 {
+    margin-top: 20px;
+}

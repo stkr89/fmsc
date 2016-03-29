@@ -14,7 +14,6 @@ function DefaultController($scope) {
 
     function getTotalAmount(donations, callback) {
         var don = eval("(" + donations + ")");
-        console.log(don);
         var amount = 0;
         for (var i = 0; i < don.length; i++) {
             amount = amount + parseInt(don[i].amount);
@@ -46,6 +45,7 @@ function DefaultController($scope) {
             }
 
             $scope.showCanvas = true;
+
         });
     }
 }

@@ -20,7 +20,7 @@ namespace fmsc
 
                 user = new LoginDao().register(user);
 
-
+                Response.Redirect("Login.aspx");
             }
         }
     }

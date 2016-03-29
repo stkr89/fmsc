@@ -13,11 +13,15 @@ namespace fmsc
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            statusDiv.Visible = false;
+            User user = (User)Session["user"];
 
-            if(IsPostBack)
+            if(user == null)
             {
-                Donation donation = new Donation(1, "sumit.tokkar@gmail.com", Convert.ToDouble(Request.Form["amount"]), new DateTime());
+                Response.Redirect("Login.aspx");
+            }
+            if (IsPostBack)
+            {
+                Donation donation = new Donation(user.email, Convert.ToDouble(Request.Form["amount"]), new DateTime());
 
                 DonationDao donationDao = new DonationDao();
                 donation = donationDao.donate(donation);

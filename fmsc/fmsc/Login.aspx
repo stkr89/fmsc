@@ -13,13 +13,18 @@
         <h3>Log In</h3>
         <div class="row">
             <div class="col-md-4">
+                <div class="padding-top-20" id="statusDiv" runat="server" visible="false">
+                    <div class="alert alert-danger" role="alert">
+                        <asp:Label ID="status" runat="server" Text="Invalid credentials"></asp:Label>
+                    </div>
+                </div>
                 <fieldset class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control input-sm" id="exampleInputEmail1" placeholder="Enter email">
+                    <label>Email address</label>
+                    <asp:TextBox type="text" ID="email" runat="server" class="form-control input-sm" placeholder="Enter email"></asp:TextBox>
                 </fieldset>
                 <fieldset class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control input-sm" id="password" placeholder="Enter password">
+                    <asp:TextBox TextMode="Password" type="text" ID="password" runat="server" class="form-control input-sm" placeholder="Enter password"></asp:TextBox>
                 </fieldset>
                 <button type="submit" class="btn btn-primary">Login</button>
                 or

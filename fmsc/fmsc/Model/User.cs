@@ -7,17 +7,17 @@ namespace fmsc.Model
 {
     public class User
     {
-        string firstName;
-        string lastName;
-        string email;
-        string password;
-        string mobile;
-        string address1;
-        string address2;
-        string country;
-        string state;
-        string city;
-        string zip;
+        public string firstName;
+        public string lastName;
+        public string email;
+        public string password;
+        public string mobile;
+        public string address1;
+        public string address2;
+        public string country;
+        public string state;
+        public string city;
+        public string zip;
 
         public User(string firstName, string lastName, string email, string password, string mobile, string address1, string address2, 
             string country, string state, string city, string zip)

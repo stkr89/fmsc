@@ -7,14 +7,12 @@ namespace fmsc.Model
 {
     public class Donation
     {
-        public int id;
         public string userId;
         public double amount;
         public DateTime date;
 
-        public Donation(int id, string userId, double amount, DateTime date)
+        public Donation(string userId, double amount, DateTime date)
         {
-            this.id = id;
             this.userId = userId;
             this.amount = amount;
             this.date = date;

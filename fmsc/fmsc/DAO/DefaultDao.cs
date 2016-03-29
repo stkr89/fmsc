@@ -23,7 +23,7 @@ namespace fmsc.DAO
                 List<Donation> donations = new List<Donation>();
                 while(records.Read())
                 {
-                    Donation donation = new Donation(records.GetInt32(0), records.GetString(3), Convert.ToDouble(records.GetDecimal(1)), Convert.ToDateTime(records.GetString(2)));
+                    Donation donation = new Donation(records.GetString(3), Convert.ToDouble(records.GetDecimal(1)), Convert.ToDateTime(records.GetString(2)));
                     donations.Add(donation);
                 }
                 records.Close();
