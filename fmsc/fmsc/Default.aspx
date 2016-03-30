@@ -8,7 +8,7 @@
     <% Response.WriteFile("~/views/header.html"); %>
     <script src="js/default.js"></script>
 </head>
-<body ng-app="DefaultModule", ng-controller="DefaultController", ng-cloak, ng-init='showCanvas()', ng-show='showCanvas'>
+<body ng-cloak ng-app="DefaultModule", ng-controller="DefaultController", ng-cloak, ng-init='showCanvas()', ng-show='showCanvas'>
     <div class="container">
             <div class="padding-top-20">
                 <div class="alert alert-success" role="alert">
@@ -47,6 +47,10 @@
                   <button type="submit" class="btn btn-primary-outline">Search</button>
                 </form>
               </div>
+            </div>
+            <div class="card card-block" runat="server">
+                
+                <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
             </div>
     </div>
 </body>
