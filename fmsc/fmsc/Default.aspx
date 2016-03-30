@@ -61,7 +61,7 @@
     var allDonations = '<%= allDonations %>';
 
     var don = eval("(" + allDonations + ")");
-
+    
     $('#myCanvas').mouseout(function (e) {
         $('#popuup_div').hide();
     });
@@ -75,7 +75,7 @@
         var ttl = 0;
         var doner = {};        
         for (var i = 0; i < don.length; i++) {
-            ttl = ttl + don[i].amount;            
+            ttl = ttl + don[i].donation.amount;            
             if (ttl >= thisPixel) {                
                 doner = don[i];
                 break;
@@ -95,9 +95,15 @@
         leftVal = e.pageX - (width / 2) + "px";
         topVal = e.pageY - (height / 2) - 20 + "px";
 
-        if (typeof doner.userId != 'undefined') {
+        if (typeof doner.user.email != 'undefined') {
+
+            var str = '<p>This pixel is donated by ';
+            str += '<strong>' + doner.user.firstName + ' ' + doner.user.lastName + '</strong> ';
+            str += 'from '
+            str += '' + doner.user.city + ', ' + doner.user.state + ', ' + doner.user.country + '</p>';
+            
             $('#popuup_div').css({ left: leftVal, top: topVal })
-                        .html('' + doner.userId)
+                        .html(str)
                         .show();
         } 
     }

@@ -18,6 +18,12 @@ namespace fmsc.Model
         public string state;
         public string city;
         public string zip;
+        private string v1;
+        private string v2;
+        private string v3;
+        private string v4;
+        private string v5;
+        private string v6;
 
         public User(string firstName, string lastName, string email, string password, string mobile, string address1, string address2, 
             string country, string state, string city, string zip)
@@ -35,5 +41,14 @@ namespace fmsc.Model
             this.zip = zip;
         }
 
+        public User(string firstName, string lastName, string email, string country, string state, string city)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.email = email;
+            this.country = country;
+            this.state = state;
+            this.city = city;
+        }
     }
 }

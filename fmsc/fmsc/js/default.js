@@ -16,7 +16,7 @@ function DefaultController($scope) {
         var don = eval("(" + donations + ")");
         var amount = 0;
         for (var i = 0; i < don.length; i++) {
-            amount = amount + parseInt(don[i].amount);
+            amount = amount + parseInt(don[i].donation.amount);
         }
         $scope.totalAmount = amount;
         callback(amount);

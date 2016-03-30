@@ -11,24 +11,29 @@ namespace fmsc.DAO
 {
     public class DefaultDao
     {
-        public List<Donation> getDonations()
+        public List<UserDonation> getDonations()
         {
             SqlConnection con = DBConfig.getConnection();
 
-            string SQLString = "SELECT * FROM Donate";
+            string SQLString = "SELECT R.First_Name, R.Last_Name, R.Email, R.Country, R.State, R.City, D.amount, D.date "+
+                               "FROM Register_FMSC R INNER JOIN Donate D ON R.Email = D.userId; ";
             SqlCommand checkIDTable = new SqlCommand(SQLString, con);
             SqlDataReader records = checkIDTable.ExecuteReader();
 
             if (records.HasRows)
             {
-                List<Donation> donations = new List<Donation>();
+                List<UserDonation> userDonations = new List<UserDonation>();
                 while(records.Read())
                 {
-                    Donation donation = new Donation(records.GetString(3), Convert.ToDouble(records.GetDecimal(1)), Convert.ToDateTime(records.GetString(2)));
-                    donations.Add(donation);
+                    User user = new User(records.GetString(0), records.GetString(1), records.GetString(2), records.GetString(3),
+                                         records.GetString(4), records.GetString(5));
+                    Donation donation = new Donation(Convert.ToDouble(records.GetDecimal(6)), Convert.ToDateTime(records.GetString(7)));
+
+                    UserDonation userDonation = new UserDonation(donation, user);
+                    userDonations.Add(userDonation);
                 }
                 records.Close();
-                return donations;
+                return userDonations;
             }
             else
             {

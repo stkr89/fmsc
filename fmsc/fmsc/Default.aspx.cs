@@ -53,7 +53,7 @@ namespace fmsc
             }
         }
 
-        private string convertToJson(List<Donation> list)
+        private string convertToJson(List<UserDonation> list)
         {
             JavaScriptSerializer jss = new JavaScriptSerializer();
 
