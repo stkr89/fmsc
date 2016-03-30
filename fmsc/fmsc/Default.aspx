@@ -20,8 +20,11 @@
                     <img src="images/logo.jpg", id='original', ng-show='false'/>
                 </div>
                 <canvas id="myCanvas", width='1000', height='1000'>
-
+                    
                 </canvas>
+                <div id="popuup_div" class="popup_msg">
+                   ....you can write the mssage here...
+                </div>
             </div>  
             <div class="card">
               <div class="card-block">
@@ -66,16 +69,29 @@
         var thisPixel = (y * 999 + x);
         
         var ttl = 0;
-        var doner = {};
+        var doner = {};        
         for (var i = 0; i < don.length; i++) {
-            ttl = ttl + don[i].amount;
-            if (thisPixel > ttl) {
+            ttl = ttl + don[i].amount;            
+            if (ttl >= thisPixel) {                
                 doner = don[i];
                 break;
+            } else {
+                $('#popuup_div').hide();
             }
         }
 
-        console.log(JSON.stringify(doner));
+        //getting height and width of the message box
+        var height = $('#popuup_div').height();
+        var width = $('#popuup_div').width();
+        //calculating offset for displaying popup message
+        leftVal = e.pageX - (width / 2) + "px";
+        topVal = e.pageY - (height / 2) - 20 + "px";
+        //show the popup message and hide with fading effect
+        if (typeof doner.userId != 'undefined') {
+            $('#popuup_div').css({ left: leftVal, top: topVal })
+                        .html('' + doner.userId)
+                        .show();
+        }
     });
 
     function findPos(obj) {

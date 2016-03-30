@@ -20,3 +20,16 @@ html, body, .container-table {
 .marginn-top-20 {
     margin-top: 20px;
 }
+
+.popup_msg{
+    position:absolute;
+    padding-top: 5px;
+    z-index:10;
+    width:200px;
+    height:30px;
+    text-align:center;
+    color:blue;
+    font: 14px Verdana, Arial, Helvetica, sans-serif;
+    background-color:greenyellow;
+    display:none;
+}
