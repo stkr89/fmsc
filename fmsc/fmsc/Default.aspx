@@ -56,5 +56,38 @@
 </body>
 <script>
     var allDonations = '<%= allDonations %>';
+
+    var don = eval("(" + allDonations + ")");
+    
+    $('#myCanvas').mousemove(function (e) {        
+        var pos = findPos(this);
+        var x = e.pageX - pos.x;
+        var y = e.pageY - pos.y;
+        var thisPixel = (y * 999 + x);
+        
+        var ttl = 0;
+        var doner = {};
+        for (var i = 0; i < don.length; i++) {
+            ttl = ttl + don[i].amount;
+            if (thisPixel > ttl) {
+                doner = don[i];
+                break;
+            }
+        }
+
+        console.log(JSON.stringify(doner));
+    });
+
+    function findPos(obj) {
+        var curleft = 0, curtop = 0;
+        if (obj.offsetParent) {
+            do {
+                curleft += obj.offsetLeft;
+                curtop += obj.offsetTop;
+            } while (obj = obj.offsetParent);
+            return { x: curleft, y: curtop };
+        }
+        return undefined;
+    }
 </script>
 </html>
