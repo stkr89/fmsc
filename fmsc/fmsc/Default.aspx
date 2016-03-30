@@ -61,6 +61,10 @@
     var allDonations = '<%= allDonations %>';
 
     var don = eval("(" + allDonations + ")");
+
+    $('#myCanvas').mouseout(function (e) {
+        $('#popuup_div').hide();
+    });
     
     $('#myCanvas').mousemove(function (e) {        
         var pos = findPos(this);
@@ -80,19 +84,23 @@
             }
         }
 
-        //getting height and width of the message box
+        showPopup(e, doner);
+    });
+
+    function showPopup(e, doner) {
+
         var height = $('#popuup_div').height();
         var width = $('#popuup_div').width();
-        //calculating offset for displaying popup message
+
         leftVal = e.pageX - (width / 2) + "px";
         topVal = e.pageY - (height / 2) - 20 + "px";
-        //show the popup message and hide with fading effect
+
         if (typeof doner.userId != 'undefined') {
             $('#popuup_div').css({ left: leftVal, top: topVal })
                         .html('' + doner.userId)
                         .show();
-        }
-    });
+        } 
+    }
 
     function findPos(obj) {
         var curleft = 0, curtop = 0;
