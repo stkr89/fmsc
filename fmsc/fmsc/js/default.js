@@ -19,6 +19,7 @@ function DefaultController($scope) {
             amount = amount + parseInt(don[i].donation.amount);
         }
         $scope.totalAmount = amount;
+        $scope.totalMeals = Math.round(amount / 0.22);
         callback(amount);
     }
 

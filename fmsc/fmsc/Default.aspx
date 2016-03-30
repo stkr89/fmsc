@@ -12,7 +12,7 @@
     <div class="container">
             <div class="padding-top-20">
                 <div class="alert alert-success" role="alert">
-                    Total donations: $ {{totalAmount}}
+                    Total donations: $ {{totalAmount}} = {{totalMeals}} meals
                 </div>
             </div>
             <div align='center'>
@@ -22,39 +22,8 @@
                 <canvas id="myCanvas", width='1000', height='1000'>
                     
                 </canvas>
-                <div id="popuup_div" class="popup_msg">
-                   ....you can write the mssage here...
-                </div>
-            </div>  
-            <div class="card">
-              <div class="card-block">
-                <h4 class="card-title">Search</h4>
-                <form class="form-inline" runat="server">
-                  <div class="form-group">
-                    <label class="sr-only">Enter search text</label>
-                    <asp:TextBox class="form-control" placeholder="Enter search text" ID="search" Size="50" runat="server"></asp:TextBox>
-                  </div>
-                  <div class="form-group">
-                    <asp:DropDownList ID="param" runat="server" class="form-control">
-                        <asp:ListItem Text="All" Value="all" />
-                        <asp:ListItem Text="User Id" Value="userId" />
-                        <asp:ListItem Text="First Name" Value="firstName" />
-                        <asp:ListItem Text="Last Name" Value="lastName" /> 
-                        <asp:ListItem Text="Email" Value="email" />
-                        <asp:ListItem Text="Country" Value="country" />
-                        <asp:ListItem Text="State" Value="state" />
-                        <asp:ListItem Text="City" Value="city" />
-                        <asp:ListItem Text="Zip" Value="zip" />
-                    </asp:DropDownList>
-                  </div>
-                  <button type="submit" class="btn btn-primary-outline">Search</button>
-                </form>
-              </div>
-            </div>
-            <div class="card card-block" runat="server">
-                
-                <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
-            </div>
+                <div id="popuup_div" class="popup_msg"></div>
+            </div>              
     </div>
 </body>
 <script>
@@ -95,7 +64,7 @@
         leftVal = e.pageX - (width / 2) + "px";
         topVal = e.pageY - (height / 2) - 20 + "px";
 
-        if (typeof doner.user.email != 'undefined') {
+        if (typeof doner != 'undefined' && typeof doner.user != 'undefinded' && typeof doner.user.email != 'undefined') {
 
             var str = '<p>This pixel is donated by ';
             str += '<strong>' + doner.user.firstName + ' ' + doner.user.lastName + '</strong> ';
