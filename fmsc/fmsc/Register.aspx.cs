@@ -16,7 +16,7 @@ namespace fmsc
             if(IsPostBack)
             {
                 User user = new User(fName.Text, lName.Text, email.Text, password.Text, mobile.Text, address1.Text, address2.Text,
-                                     country.Text, state.Text, city.Text, zip.Text);
+                                     country.Text, state.Text, city.Text, zip.Text, "VISITOR");
 
                 user = new LoginDao().register(user);
 

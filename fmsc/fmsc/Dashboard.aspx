@@ -8,12 +8,41 @@
     <title>FMSC | Dashboard</title>
     <% Response.WriteFile("~/views/header.html"); %>
     <uc:Nav id="Nav" runat="server" />
+    <script src="js/dashboard.js"></script>
 </head>
-<body>
+<body ng-cloak ng-app="DashboardModule", ng-controller="DashboardController", ng-init='showDonations()', ng-show='true'>
     <form id="form1" runat="server">
     <div class="container">
-    hello
+        <table class="table marginn-top-20">
+          <thead class="thead-inverse">
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Country</th>
+              <th>State</th>
+              <th>City</th>
+              <th>Amount</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="donation in allDonations">
+              <th scope="row">{{$index+1}}</th>
+              <td>{{donation.user.firstName}}</td>
+              <td>{{donation.user.lastName}}</td>
+              <td>{{donation.user.country}}</td>
+              <td>{{donation.user.state}}</td>
+              <td>{{donation.user.city}}</td>
+              <td>$ {{donation.donation.amount}}.00</td>
+              <td>{{donation.donation.date}}</td>
+            </tr>
+          </tbody>
+        </table>
     </div>
     </form>
 </body>
+<script>
+    var allDonations = '<%= allDonations %>';
+</script>
 </html>

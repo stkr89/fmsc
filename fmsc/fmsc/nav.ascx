@@ -12,7 +12,7 @@
                 <a class="nav-link" href="../Donate.aspx">Donate</a>
             </li>
             <li class="nav-item">
-                <asp:HyperLink ID="dashboard" class="nav-link" NavigateUrl="~/Login.aspx" runat="server" Visible="true">Dashboard</asp:HyperLink>
+                <asp:HyperLink ID="dashboard" class="nav-link" NavigateUrl="~/Dashboard.aspx" runat="server" Visible="false">Dashboard</asp:HyperLink>
             </li>
         </ul>
         <div class="form-inline pull-xs-right">

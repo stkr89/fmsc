@@ -41,7 +41,7 @@ namespace fmsc.DAO
                 {
                     user = new User(records.GetString(1), records.GetString(2), records.GetString(3),
                     records.GetString(4), records.GetString(5), records.GetString(6), records.GetString(7), records.GetString(8),
-                    records.GetString(9), records.GetString(10), records.GetString(11));
+                    records.GetString(9), records.GetString(10), records.GetString(11), records.GetString(12));
                 }
                 records.Close();
                 return user;

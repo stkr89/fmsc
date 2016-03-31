@@ -10,7 +10,7 @@
     <uc:Nav id="Nav" runat="server" />
     <script src="js/default.js"></script>
 </head>
-<body ng-cloak ng-app="DefaultModule", ng-controller="DefaultController", ng-cloak, ng-init='showCanvas()', ng-show='showCanvas'>
+<body ng-cloak ng-app="DefaultModule", ng-controller="DefaultController", ng-init='showCanvas()', ng-show='showCanvas'>
     <div class="container">
             <div class="padding-top-20">
                 <div class="alert alert-success" role="alert">

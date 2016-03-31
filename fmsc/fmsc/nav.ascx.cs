@@ -16,6 +16,11 @@ namespace fmsc
 
             if (user != null)
             {
+                if (user.role == "ADMIN")
+                {
+                    dashboard.Visible = true;
+                }
+
                 logout.Visible = true;
             } else
             {
