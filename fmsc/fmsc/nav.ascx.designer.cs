@@ -10,15 +10,24 @@
 namespace fmsc {
     
     
-    public partial class Default {
+    public partial class header1 {
         
         /// <summary>
-        /// Nav control.
+        /// login control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::fmsc.header1 Nav;
+        protected global::System.Web.UI.WebControls.HyperLink login;
+        
+        /// <summary>
+        /// logout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink logout;
     }
 }

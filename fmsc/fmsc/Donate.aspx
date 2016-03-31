@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Donate.aspx.cs" Inherits="fmsc.Donate" %>
+<%@ Register TagPrefix="uc" TagName="Nav" Src="~/nav.ascx" %>
 
 <!DOCTYPE html>
 
@@ -6,7 +7,7 @@
 <head runat="server">
     <title>FMSC | Donate</title>
     <% Response.WriteFile("~/views/header.html"); %>
-    <script src="https://www.paypalobjects.com/js/external/dg.js" type="text/javascript"></script>
+    <uc:Nav id="Nav" runat="server" />
 </head>
 <body>
     <form id="form1" runat="server" action="Donate.aspx">

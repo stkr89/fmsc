@@ -1,0 +1,21 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="nav.ascx.cs" Inherits="fmsc.header1" %>
+
+
+    <div class="container">
+    <h3>Feed My Starving Children</h3>
+    <nav class="navbar navbar-light bg-faded">
+        <ul class="nav navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="../Default.aspx">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../Donate.aspx">Donate</a>
+            </li>
+        </ul>
+        <div class="form-inline pull-xs-right">
+            <asp:HyperLink ID="login" class="btn btn-success-outline btn-sm" NavigateUrl="~/Login.aspx" runat="server" Visible="false">Login</asp:HyperLink>
+            <asp:HyperLink ID="logout" class="btn btn-success-outline btn-sm" NavigateUrl="~/Logout.aspx" runat="server" Visible="false">Logout</asp:HyperLink>           
+        </div>
+        
+    </nav>
+</div>

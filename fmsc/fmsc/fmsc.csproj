@@ -61,6 +61,8 @@
     <Content Include="css\main.css" />
     <Content Include="Default.aspx" />
     <Content Include="Donate.aspx" />
+    <Content Include="Logout.aspx" />
+    <Content Include="nav.ascx" />
     <Content Include="images\logo.jpg" />
     <Content Include="js\default.js" />
     <Content Include="Login.aspx" />
@@ -85,6 +87,20 @@
     </Compile>
     <Compile Include="Donate.aspx.designer.cs">
       <DependentUpon>Donate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nav.ascx.cs">
+      <DependentUpon>nav.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nav.ascx.designer.cs">
+      <DependentUpon>nav.ascx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

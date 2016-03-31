@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="fmsc.Default" %>
+<%@ Register TagPrefix="uc" TagName="Nav" Src="~/nav.ascx" %>
 
 <!DOCTYPE html>
 
@@ -6,6 +7,7 @@
 <head runat="server">
     <title>FMSC | Home</title>
     <% Response.WriteFile("~/views/header.html"); %>
+    <uc:Nav id="Nav" runat="server" />
     <script src="js/default.js"></script>
 </head>
 <body ng-cloak ng-app="DefaultModule", ng-controller="DefaultController", ng-cloak, ng-init='showCanvas()', ng-show='showCanvas'>

@@ -13,6 +13,15 @@ namespace fmsc {
     public partial class Login {
         
         /// <summary>
+        /// Nav control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::fmsc.header1 Nav;
+        
+        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>

@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="fmsc.Login" %>
+<%@ Register TagPrefix="uc" TagName="Nav" Src="~/nav.ascx" %>
 
 <!DOCTYPE html>
 
@@ -6,6 +7,7 @@
 <head runat="server">
     <title>FMSC | Login</title>
     <% Response.WriteFile("~/views/header.html"); %>
+    <uc:Nav id="Nav" runat="server" />
 </head>
 <body>    
     <form id="form1" runat="server">
