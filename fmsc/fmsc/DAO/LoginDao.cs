@@ -29,7 +29,7 @@ namespace fmsc.DAO
         internal User login(string email, string password)
         {
             SqlConnection con = DBConfig.getConnection();
-
+            
             string SQLString = "SELECT * FROM Register_FMSC WHERE email = '"+email+"' AND password = '"+password+"'";
             SqlCommand checkIDTable = new SqlCommand(SQLString, con);
             SqlDataReader records = checkIDTable.ExecuteReader();

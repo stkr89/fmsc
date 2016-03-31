@@ -5,11 +5,14 @@
     <h3>Feed My Starving Children</h3>
     <nav class="navbar navbar-light bg-faded">
         <ul class="nav navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="../Default.aspx">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item" runat="server" id="liHome">
+                <asp:HyperLink ID="home" class="nav-link" NavigateUrl="~/Default.aspx" runat="server">Home</asp:HyperLink>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../Donate.aspx">Donate</a>
+            </li>
+            <li class="nav-item">
+                <asp:HyperLink ID="dashboard" class="nav-link" NavigateUrl="~/Login.aspx" runat="server" Visible="true">Dashboard</asp:HyperLink>
             </li>
         </ul>
         <div class="form-inline pull-xs-right">

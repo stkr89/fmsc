@@ -14,7 +14,7 @@ namespace fmsc
         {
             User user = (User)Session["user"];
 
-            if(user != null)
+            if (user != null)
             {
                 logout.Visible = true;
             } else

@@ -1,53 +1,57 @@
-﻿var DefaultModule = angular.module('DefaultModule', []);
-
-DefaultModule
-    .controller('DefaultController', DefaultController);
-
-function DefaultController($scope) {
+﻿try {
 
 
-    $scope.allDonations = allDonations;
+    var DefaultModule = angular.module('DefaultModule', []);
 
-    $scope.showCanvas = showCanvas;
+    DefaultModule
+        .controller('DefaultController', function ($scope) {
 
-    //****************************************************************************
 
-    function getTotalAmount(donations, callback) {
-        var don = eval("(" + donations + ")");
-        var amount = 0;
-        for (var i = 0; i < don.length; i++) {
-            amount = amount + parseInt(don[i].donation.amount);
-        }
-        $scope.totalAmount = amount;
-        $scope.totalMeals = Math.round(amount / 0.22);
-        callback(amount);
-    }
+            $scope.allDonations = allDonations;
 
-    function showCanvas() {
-        
-        getTotalAmount($scope.allDonations, function (totalAmount) {
+            $scope.showCanvas = showCanvas;
 
-            var c = document.getElementById("myCanvas");
-            var ctx = c.getContext("2d");
-            var img = document.getElementById("original");
-            ctx.drawImage(img, 0, 0);
-            imgData = ctx.getImageData(0, 0, c.width, c.height);
-            var w = imgData.width;
-            var h = imgData.height;
+            //****************************************************************************
 
-            var l = w * h;
-            for (var i = l; i > totalAmount; i--) {
-                // get the position of pixel
-                var y = parseInt(i / w, 10);
-                var x = i - y * w;
-
-                ctx.fillStyle = "#F1F1F1";
-                ctx.fillRect(x, y, 1, 1);
+            function getTotalAmount(donations, callback) {
+                var don = eval("(" + donations + ")");
+                var amount = 0;
+                for (var i = 0; i < don.length; i++) {
+                    amount = amount + parseInt(don[i].donation.amount);
+                }
+                $scope.totalAmount = amount;
+                $scope.totalMeals = Math.round(amount / 0.22);
+                callback(amount);
             }
 
-            $scope.showCanvas = true;
+            function showCanvas() {
 
+                getTotalAmount($scope.allDonations, function (totalAmount) {
+
+                    var c = document.getElementById("myCanvas");
+                    var ctx = c.getContext("2d");
+                    var img = document.getElementById("original");
+                    ctx.drawImage(img, 0, 0);
+                    imgData = ctx.getImageData(0, 0, c.width, c.height);
+                    var w = imgData.width;
+                    var h = imgData.height;
+
+                    var l = w * h;
+                    for (var i = l; i > totalAmount; i--) {
+                        // get the position of pixel
+                        var y = parseInt(i / w, 10);
+                        var x = i - y * w;
+
+                        ctx.fillStyle = "#F1F1F1";
+                        ctx.fillRect(x, y, 1, 1);
+                    }
+
+                    $scope.showCanvas = true;
+
+                });
+            }
         });
-    }
-}
 
+    
+
+} catch (e) { console.log(e); }
