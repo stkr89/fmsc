@@ -12,10 +12,14 @@
                 <a class="nav-link" href="../Donate.aspx">Donate</a>
             </li>
             <li class="nav-item">
+                <asp:HyperLink ID="profile" class="nav-link" NavigateUrl="~/Register.aspx" runat="server" Visible="false">Profile</asp:HyperLink>
+            </li>
+            <li class="nav-item">
                 <asp:HyperLink ID="dashboard" class="nav-link" NavigateUrl="~/Dashboard.aspx" runat="server" Visible="false">Dashboard</asp:HyperLink>
             </li>
         </ul>
-        <div class="form-inline pull-xs-right">
+        <div class="form-inline pull-xs-right", style="padding-top: 3px">
+            <asp:Label ID="userName" runat="server" Text=""></asp:Label>&nbsp;&nbsp;
             <asp:HyperLink ID="login" class="btn btn-success-outline btn-sm" NavigateUrl="~/Login.aspx" runat="server" Visible="false">Login</asp:HyperLink>
             <asp:HyperLink ID="logout" class="btn btn-success-outline btn-sm" NavigateUrl="~/Logout.aspx" runat="server" Visible="false">Logout</asp:HyperLink>           
         </div>

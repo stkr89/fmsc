@@ -18,13 +18,20 @@ namespace fmsc.DAO
             {
                 string SQLString = "INSERT INTO Donate(amount, date, userId) VALUES ('"+donation.amount+"', '"+donation.date+"', '"+donation.userId+"')";
                 SqlCommand sqlCommand = new SqlCommand(SQLString, con);
-                sqlCommand.ExecuteNonQuery();                
+                sqlCommand.ExecuteNonQuery();
+
+                sendReceipt(donation.userId);              
 
                 return donation;
             }
             catch (Exception exception) {
                 return null;
             }
+        }
+
+        private void sendReceipt(string userId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

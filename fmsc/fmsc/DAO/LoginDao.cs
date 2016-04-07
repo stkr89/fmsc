@@ -28,8 +28,8 @@ namespace fmsc.DAO
 
         internal User login(string email, string password)
         {
-            SqlConnection con = DBConfig.getConnection();
-            
+            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["connection"].ConnectionString);
+            con.Open();
             string SQLString = "SELECT * FROM Register_FMSC WHERE email = '"+email+"' AND password = '"+password+"'";
             SqlCommand checkIDTable = new SqlCommand(SQLString, con);
             SqlDataReader records = checkIDTable.ExecuteReader();
@@ -51,6 +51,40 @@ namespace fmsc.DAO
                 records.Close();
                 return null;
             }
+        }
+
+        public User update(User user)
+        {
+            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["connection"].ConnectionString);
+
+            con.Open();
+            //string SQLString = "UPDATE Register_FMSC SET First_Name = @First_Name , Last_Name = @Last_Name, "+
+            //                   "Email=@Email, Password=@Password, Mobile=@Mobile, Address1=@Address1, Address2=@Address2, "+
+            //                   "Country=@Country, State=@State, City=@City where Email = @Email";
+
+            string SQLString = "UPDATE Register_FMSC SET First_Name = '"+ user.firstName + "' , Last_Name = '"+user.lastName+"', " +
+                               "Email='"+user.email+"', Password='"+user.password+"', Mobile='"+user.mobile+"', "+
+                               "Address1='"+user.address1+"', Address2='"+user.address2+"', " +
+                               "Country='"+user.country+"', State='"+user.state+"', City='"+user.city+"' where Email = '"+user.email+"'";
+
+            SqlCommand cmd = new SqlCommand(SQLString, con);
+
+            //cmd.Parameters.AddWithValue("@First_Name", user.firstName);
+            //cmd.Parameters.AddWithValue("@Last_Name", user.lastName);
+            //cmd.Parameters.AddWithValue("@Email", user.email);
+            //cmd.Parameters.AddWithValue("@Password", user.password);
+            //cmd.Parameters.AddWithValue("@Mobile", user.mobile);
+            //cmd.Parameters.AddWithValue("@Address1", user.address1);
+            //cmd.Parameters.AddWithValue("@Address2", user.address2);
+            //cmd.Parameters.AddWithValue("@Country", user.country);
+            //cmd.Parameters.AddWithValue("@State", user.state);
+            //cmd.Parameters.AddWithValue("@City", user.city);
+
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            return user;
         }
     }
 }

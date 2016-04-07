@@ -13,12 +13,20 @@ namespace fmsc.DAO
     {
         public List<UserDonation> getDonations()
         {
-            SqlConnection con = DBConfig.getConnection();
+            //SqlConnection con = DBConfig.getConnection();
+
+            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["connection"].ConnectionString);
+
+            con.Open();
 
             string SQLString = "SELECT R.First_Name, R.Last_Name, R.Email, R.Country, R.State, R.City, D.amount, D.date "+
                                "FROM Register_FMSC R INNER JOIN Donate D ON R.Email = D.userId; ";
             SqlCommand checkIDTable = new SqlCommand(SQLString, con);
-            SqlDataReader records = checkIDTable.ExecuteReader();
+            SqlDataReader records = null;
+            try
+            {
+                records = checkIDTable.ExecuteReader();
+                   
 
             if (records.HasRows)
             {
@@ -38,6 +46,10 @@ namespace fmsc.DAO
             else
             {
                 records.Close();
+                return null;
+            }
+            }
+            catch (Exception exp) {
                 return null;
             }
         }

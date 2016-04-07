@@ -37,7 +37,9 @@ namespace fmsc.src
                 {
                     Console.Write("Successfully selected the database");
                 }
-            } 
+            }
+
+            con = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
 
             return con;
         }

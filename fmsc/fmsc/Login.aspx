@@ -22,11 +22,11 @@
                 </div>
                 <fieldset class="form-group">
                     <label>Email address</label>
-                    <asp:TextBox type="text" ID="email" runat="server" class="form-control input-sm" placeholder="Enter email"></asp:TextBox>
+                    <asp:TextBox required type="text" ID="email" runat="server" class="form-control input-sm" placeholder="Enter email"></asp:TextBox>
                 </fieldset>
                 <fieldset class="form-group">
                     <label for="password">Password</label>
-                    <asp:TextBox TextMode="Password" type="text" ID="password" runat="server" class="form-control input-sm" placeholder="Enter password"></asp:TextBox>
+                    <asp:TextBox required TextMode="Password" type="text" ID="password" runat="server" class="form-control input-sm" placeholder="Enter password"></asp:TextBox>
                 </fieldset>
                 <button type="submit" class="btn btn-primary-outline">Login</button>
                 or

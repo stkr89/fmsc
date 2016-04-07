@@ -31,6 +31,15 @@ namespace fmsc {
         protected global::System.Web.UI.WebControls.HyperLink home;
         
         /// <summary>
+        /// profile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink profile;
+        
+        /// <summary>
         /// dashboard control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace fmsc {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink dashboard;
+        
+        /// <summary>
+        /// userName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label userName;
         
         /// <summary>
         /// login control.
