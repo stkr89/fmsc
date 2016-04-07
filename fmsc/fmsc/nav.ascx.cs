@@ -18,10 +18,10 @@ namespace fmsc
             {
                 if (user.role == "ADMIN")
                 {
-                    dashboard.Visible = true;
-                    profile.Visible = true;
+                    dashboard.Visible = true;                    
                 }
 
+                profile.Visible = true;
                 userName.Text = "Welcome " + user.firstName + " " + user.lastName; 
                 logout.Visible = true;
             } else
