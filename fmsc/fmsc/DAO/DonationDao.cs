@@ -12,11 +12,13 @@ namespace fmsc.DAO
     {
         public Donation donate(Donation donation)
         {
-            SqlConnection con = DBConfig.getConnection();
+            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["connection"].ConnectionString);
+
+            con.Open();
 
             try
             {
-                string SQLString = "INSERT INTO Donate(amount, date, userId) VALUES ('"+donation.amount+"', '"+donation.date+"', '"+donation.userId+"')";
+                string SQLString = "INSERT INTO Donate(amount, date, userId) VALUES ("+donation.amount+", '"+donation.date+"', '"+donation.userId+"')";
                 SqlCommand sqlCommand = new SqlCommand(SQLString, con);
                 sqlCommand.ExecuteNonQuery();
 
@@ -31,7 +33,7 @@ namespace fmsc.DAO
 
         private void sendReceipt(string userId)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

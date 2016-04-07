@@ -32,7 +32,7 @@
     var allDonations = '<%= allDonations %>';
 
     var don = eval("(" + allDonations + ")");
-    
+
     $('#myCanvas').mouseout(function (e) {
         $('#popuup_div').hide();
     });
