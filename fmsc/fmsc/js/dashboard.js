@@ -3,8 +3,7 @@
 
     var DefaultModule = angular.module('DashboardModule', ['angularMoment']);
 
-    DefaultModule
-        .controller('DashboardController', function ($scope) {
+    DefaultModule.controller('DashboardController', function ($scope) {
 
 
             $scope.allDonations = eval("(" + allDonations + ")");
