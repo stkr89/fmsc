@@ -10,8 +10,6 @@ namespace fmsc.Model
         public string userId;
         public double amount;
         public DateTime date;
-        private double v;
-        private DateTime dateTime;
 
         public Donation(string userId, double amount, DateTime date)
         {
@@ -20,10 +18,10 @@ namespace fmsc.Model
             this.date = date;
         }
 
-        public Donation(double amount, DateTime dateTime)
+        public Donation(double amount, DateTime date)
         {
             this.amount = amount;
-            this.dateTime = dateTime;
+            this.date = date;
         }
     }
 }

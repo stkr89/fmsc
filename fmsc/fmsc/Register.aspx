@@ -64,7 +64,7 @@
                     <label for="zip">Zip</label>
                     <asp:TextBox required type="text" ID="zip" runat="server" class="form-control input-sm" placeholder="Enter zip"></asp:TextBox>
                 </fieldset>
-                <div class="col-md-12"><button type="submit" class="btn btn-primary-outline">Register</button></div>
+                <div class="col-md-12"><button type="submit" class="btn-sm btn btn-primary-outline">Register</button></div>
             </div>
         </div>                
     </div>

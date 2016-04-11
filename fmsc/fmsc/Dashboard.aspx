@@ -36,7 +36,7 @@
               <td>{{donation.user.state}}</td>
               <td>{{donation.user.city}}</td>
               <td>$ {{donation.donation.amount}}.00</td>
-              <td>{{donation.donation.date}}</td>
+              <td>{{donation.donation.date | amDateFormat:'MM.DD.YYYY'}}</td>
             </tr>
           </tbody>
         </table>

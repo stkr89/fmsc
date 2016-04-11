@@ -62,8 +62,13 @@
     <Content Include="Dashboard.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Donate.aspx" />
+    <Content Include="js\angular-moment.min.js" />
+    <Content Include="js\angular.min.js" />
+    <Content Include="js\bootstrap.min.js" />
     <Content Include="js\dashboard.js" />
     <Content Include="js\jeoquery.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\moment.min.js" />
     <Content Include="Logout.aspx" />
     <Content Include="nav.ascx" />
     <Content Include="images\logo.jpg" />
@@ -134,6 +139,7 @@
     <Compile Include="UserDonations.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\bootstrap.min.css" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

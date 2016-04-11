@@ -1,7 +1,7 @@
 ﻿try {
 
 
-    var DefaultModule = angular.module('DashboardModule', []);
+    var DefaultModule = angular.module('DashboardModule', ['angularMoment']);
 
     DefaultModule
         .controller('DashboardController', function ($scope) {

@@ -19,7 +19,7 @@
                     <label for="fName">Amount</label>
                     <asp:TextBox type="text" ID="amount" runat="server" class="form-control input-sm" placeholder="Enter amount"></asp:TextBox>
                 </fieldset>       
-                <div class="col-md-12"><button type="submit" class="btn btn-primary-outline">Donate</button></div>
+                <div class="col-md-12"><button type="submit" class="btn btn-primary-outline btn-sm">Donate</button></div>
                 <div class="col-md-12 padding-top-20" id="statusDiv" runat="server" visible="false">
                     <div class="alert alert-success" role="alert">
                         <asp:Label ID="status" runat="server" Text=""></asp:Label>

@@ -28,7 +28,7 @@
                     <label for="password">Password</label>
                     <asp:TextBox required TextMode="Password" type="text" ID="password" runat="server" class="form-control input-sm" placeholder="Enter password"></asp:TextBox>
                 </fieldset>
-                <button type="submit" class="btn btn-primary-outline">Login</button>
+                <button type="submit" class="btn btn-primary-outline btn-sm">Login</button>
                 or
                 <a href="Register.aspx" class="pull-right">Sign Up</a>
             </div>
