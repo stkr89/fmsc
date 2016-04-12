@@ -39,8 +39,24 @@ namespace fmsc
                 string location = Request.Form["location"];
                 string[] parts = location.Split(new string[] { ", " }, StringSplitOptions.None);
 
+                string city = "", state = "", country = "";
+
+                if(parts.Length == 3 )
+                {
+                    country = parts[2];
+                    state = parts[1];
+                    city = parts[0];
+                } else if(parts.Length == 2)
+                {
+                    city = parts[0];
+                    country = parts[1];
+                } else if(parts.Length == 1)
+                {
+                    country = parts[0];
+                }
+
                 User user = new User(fName.Text, lName.Text, email.Text, password.Text, mobile.Text, address1.Text, address2.Text,
-                                     parts[2], parts[1], parts[0], zip.Text, "VISITOR");
+                                     country, state, city, zip.Text, "VISITOR");
 
                 if (operation == "REGISTER")
                 {

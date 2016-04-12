@@ -12,7 +12,8 @@ namespace fmsc.DAO
     {
         public User register(User user)
         {
-            SqlConnection con = DBConfig.getConnection();
+            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["connection"].ConnectionString);
+            con.Open();
 
             string SQLString = "INSERT INTO Register_FMSC (First_Name, Last_Name, Email, Password, Mobile, Address1, Address2, "+
             "Country, State, City, Zip) VALUES "+

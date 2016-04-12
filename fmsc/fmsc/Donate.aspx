@@ -18,7 +18,7 @@
             <div class="col-md-8 row">
                 <fieldset class="form-group col-md-3">
                     <label for="fName">Amount</label>
-                    <asp:TextBox ng-model="amount" type="text" ID="amount" runat="server" class="form-control form-control-sm" placeholder="Enter amount"></asp:TextBox>
+                    <asp:TextBox ng-model="amount" type="number" ID="amount" runat="server" class="form-control form-control-sm" placeholder="Enter amount"></asp:TextBox>
                 </fieldset> 
                 <div class="col-md-9" style="padding-top: 35px">
                     <h3 ng-show="amount">

@@ -16,20 +16,17 @@
                 google.charts.load('current', { 'packages': ['map'] });
                 google.charts.setOnLoadCallback(drawMap);
 
+                var arr = [['Country', 'Population']];
+
+                angular.forEach($scope.allDonations, function (val, index) {
+                    var temp = ['' + val.user.country + '', '' + val.user.country + ': $ ' + val.donation.amount];
+                    arr.push(temp);
+                });
+
+                //console.log(angular.toJson(arr));
+
                 function drawMap() {
-                    var data = google.visualization.arrayToDataTable([
-                      ['Country', 'Population'],
-                      ['China', 'China: 1,363,800,000'],
-                      ['India', 'India: 1,242,620,000'],
-                      ['US', 'US: 317,842,000'],
-                      ['Indonesia', 'Indonesia: 247,424,598'],
-                      ['Brazil', 'Brazil: 201,032,714'],
-                      ['Pakistan', 'Pakistan: 186,134,000'],
-                      ['Nigeria', 'Nigeria: 173,615,000'],
-                      ['Bangladesh', 'Bangladesh: 152,518,015'],
-                      ['Russia', 'Russia: 146,019,512'],
-                      ['Japan', 'Japan: 127,120,000']
-                    ]);
+                    var data = google.visualization.arrayToDataTable(arr);
 
                     var options = { showTip: true };
 

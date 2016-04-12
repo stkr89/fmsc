@@ -66,6 +66,7 @@
     <Content Include="js\angular.min.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\dashboard.js" />
+    <Content Include="js\donate.js" />
     <Content Include="js\jeoquery.js" />
     <Content Include="js\jquery.min.js" />
     <Content Include="js\moment.min.js" />

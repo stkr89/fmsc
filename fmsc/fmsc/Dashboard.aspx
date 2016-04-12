@@ -15,7 +15,11 @@
 <body ng-cloak ng-app="DashboardModule", ng-controller="DashboardController", ng-show='true'>
     <form id="form1" runat="server">
     <div class="container">
-        <div id="chart_div" class="marginn-top-20" ng-init="showMap()"></div>
+        <div id="chart_div" class="marginn-top-20" ng-init="showMap()"></div>        
+        <div class="padding-top-20">
+            <label>Search</label>
+            <input type="text" class="form-control form-control-sm" ng-model="search" />
+        </div>
         <table class="table marginn-top-20">
           <thead class="thead-inverse">
             <tr>
@@ -29,7 +33,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="donation in allDonations">
+            <tr ng-repeat="donation in allDonations | filter:search">
               <th scope="row">{{$index+1}}</th>
               <td>{{donation.user.firstName}} {{donation.user.lastName}}</td>
               <td>{{donation.user.country}}</td>
