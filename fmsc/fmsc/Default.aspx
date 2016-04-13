@@ -47,7 +47,7 @@
         var doner = {};        
         for (var i = 0; i < don.length; i++) {
             ttl = ttl + don[i].donation.amount;            
-            if (ttl >= thisPixel) {                
+            if (Math.round(ttl / 0.22) >= thisPixel) {                
                 doner = don[i];
                 break;
             } else {
@@ -64,14 +64,17 @@
         var width = $('#popuup_div').width();
 
         leftVal = e.pageX - (width / 2) + "px";
-        topVal = e.pageY - (height / 2) - 20 + "px";
+        topVal = e.pageY - (height / 2) - 30 + "px";
 
         if (typeof doner != 'undefined' && typeof doner.user != 'undefinded' && typeof doner.user.email != 'undefined') {
 
             var str = '<p>This pixel is donated by ';
             str += '<strong>' + doner.user.firstName + ' ' + doner.user.lastName + '</strong> ';
             str += 'from '
-            str += '' + doner.user.city + ', ' + doner.user.state + ', ' + doner.user.country + '</p>';
+            if (typeof doner.user.city != 'undefined') {
+                str += '' + doner.user.city + ', ';
+            }
+            str += doner.user.state + ', ' + doner.user.country + '</p>';
             
             $('#popuup_div').css({ left: leftVal, top: topVal })
                         .html(str)

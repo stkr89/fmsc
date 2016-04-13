@@ -21,7 +21,8 @@
                 }
                 $scope.totalAmount = amount;
                 $scope.totalMeals = Math.round(amount / 0.22);
-                callback(amount);
+                //callback(amount);
+                callback($scope.totalMeals);
             }
 
             function showCanvas() {
