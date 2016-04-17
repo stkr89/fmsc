@@ -21,7 +21,7 @@ namespace fmsc
             }
             if (IsPostBack)
             {
-                Donation donation = new Donation(user.email, Convert.ToDouble(Request.Form["amount"]), DateTime.Now);
+                Donation donation = new Donation(user.email, Convert.ToDouble(Request.Form["amount"]), DateTime.Now, Request.Form["displayName"]);
 
                 DonationDao donationDao = new DonationDao();
                 donation = donationDao.donate(donation);

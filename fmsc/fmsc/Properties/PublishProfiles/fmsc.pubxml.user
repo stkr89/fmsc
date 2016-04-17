@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>W:\App7</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="about.aspx">
+      <publishTime>04/13/2016 20:35:40</publishTime>
+    </File>
+    <File Include="bin/fmsc.dll">
+      <publishTime>04/13/2016 20:37:43</publishTime>
+    </File>
+    <File Include="css/bootstrap.min.css">
+      <publishTime>04/11/2016 11:11:56</publishTime>
+    </File>
+    <File Include="css/main.css">
+      <publishTime>04/13/2016 20:26:24</publishTime>
+    </File>
+    <File Include="Dashboard.aspx">
+      <publishTime>04/13/2016 20:10:17</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>04/13/2016 20:10:27</publishTime>
+    </File>
+    <File Include="Donate.aspx">
+      <publishTime>04/13/2016 20:10:35</publishTime>
+    </File>
+    <File Include="images/c2.jpg">
+      <publishTime>04/13/2016 20:25:20</publishTime>
+    </File>
+    <File Include="images/c3.jpg">
+      <publishTime>04/13/2016 20:25:20</publishTime>
+    </File>
+    <File Include="images/c4.jpg">
+      <publishTime>04/13/2016 20:25:21</publishTime>
+    </File>
+    <File Include="images/c5.jpg">
+      <publishTime>04/13/2016 20:25:21</publishTime>
+    </File>
+    <File Include="images/fmscAbtUs.jpg">
+      <publishTime>04/13/2016 20:25:21</publishTime>
+    </File>
+    <File Include="images/logo.jpg">
+      <publishTime>03/24/2016 20:18:57</publishTime>
+    </File>
+    <File Include="js/angular-moment.min.js">
+      <publishTime>04/11/2016 11:18:01</publishTime>
+    </File>
+    <File Include="js/angular.min.js">
+      <publishTime>04/11/2016 11:15:07</publishTime>
+    </File>
+    <File Include="js/bootstrap.min.js">
+      <publishTime>04/11/2016 11:14:00</publishTime>
+    </File>
+    <File Include="js/dashboard.js">
+      <publishTime>04/11/2016 21:31:50</publishTime>
+    </File>
+    <File Include="js/default.js">
+      <publishTime>04/11/2016 21:37:58</publishTime>
+    </File>
+    <File Include="js/donate.js">
+      <publishTime>04/13/2016 20:01:20</publishTime>
+    </File>
+    <File Include="js/jeoquery.js">
+      <publishTime>03/31/2016 11:18:43</publishTime>
+    </File>
+    <File Include="js/jquery.min.js">
+      <publishTime>04/11/2016 11:12:55</publishTime>
+    </File>
+    <File Include="js/moment.min.js">
+      <publishTime>04/11/2016 11:23:18</publishTime>
+    </File>
+    <File Include="js/profane.js">
+      <publishTime>04/13/2016 19:51:41</publishTime>
+    </File>
+    <File Include="js_resources/angular-moment.min.js">
+      <publishTime>04/13/2016 20:09:55</publishTime>
+    </File>
+    <File Include="js_resources/angular.min.js">
+      <publishTime>04/13/2016 20:09:55</publishTime>
+    </File>
+    <File Include="js_resources/bootstrap.min.js">
+      <publishTime>04/13/2016 20:09:55</publishTime>
+    </File>
+    <File Include="js_resources/dashboard.js">
+      <publishTime>04/13/2016 20:09:55</publishTime>
+    </File>
+    <File Include="js_resources/default.js">
+      <publishTime>04/13/2016 20:09:56</publishTime>
+    </File>
+    <File Include="js_resources/donate.js">
+      <publishTime>04/13/2016 20:09:56</publishTime>
+    </File>
+    <File Include="js_resources/jeoquery.js">
+      <publishTime>04/13/2016 20:09:56</publishTime>
+    </File>
+    <File Include="js_resources/jquery.min.js">
+      <publishTime>04/13/2016 20:09:56</publishTime>
+    </File>
+    <File Include="js_resources/moment.min.js">
+      <publishTime>04/13/2016 20:09:56</publishTime>
+    </File>
+    <File Include="js_resources/profane.js">
+      <publishTime>04/13/2016 20:09:56</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>04/11/2016 12:05:07</publishTime>
+    </File>
+    <File Include="Logout.aspx">
+      <publishTime>03/30/2016 19:32:47</publishTime>
+    </File>
+    <File Include="nav.ascx">
+      <publishTime>04/13/2016 20:24:03</publishTime>
+    </File>
+    <File Include="Register.aspx">
+      <publishTime>04/13/2016 20:03:12</publishTime>
+    </File>
+    <File Include="views/header.html">
+      <publishTime>04/13/2016 20:11:26</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>04/13/2016 20:37:43</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

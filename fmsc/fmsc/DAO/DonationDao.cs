@@ -20,7 +20,8 @@ namespace fmsc.DAO
 
             try
             {
-                string SQLString = "INSERT INTO Donate(amount, date, userId) VALUES ("+donation.amount+", '"+donation.date+"', '"+donation.userId+"')";
+                string SQLString = "INSERT INTO Donate(amount, date, userId, displayName) VALUES "+
+                                   "("+donation.amount+", '"+donation.date+"', '"+donation.userId+"', '"+donation.displayName+"')";
                 SqlCommand sqlCommand = new SqlCommand(SQLString, con);
                 sqlCommand.ExecuteNonQuery();
 
@@ -35,17 +36,28 @@ namespace fmsc.DAO
 
         private void sendReceipt(Donation donation)
         {
+            string message = "<img src=\"cid:imageId\" height=\"90\" width=\"80\">" + "Greetings, ";
             MailAddress messageFrom = new MailAddress("pshriva@ilstu.edu", "Pushpjeet");
             MailMessage emailMessage = new MailMessage();
             emailMessage.From = messageFrom;
             MailAddress messageTo = new MailAddress(donation.userId);
             emailMessage.To.Add(messageTo.Address);
-            emailMessage.Subject = "Welcome to Assignment 4 Sample App";
+            emailMessage.Subject = "Welcome to FMSC mail Test";
             //emailMessage.Body = "Your registration was successfull.";
+            emailMessage.Body = "<HTML><BODY>" + message + "</BODY></HTML>";
+            AlternateView htmlView = AlternateView.CreateAlternateViewFromString(emailMessage.Body, null, "text/html");
+            LinkedResource imagelink = new LinkedResource(System.Web.HttpContext.Current.Server.MapPath(".") + @"\BT-logo.jpg", "image/jpg");
+            imagelink.ContentId = "imageId";
+            imagelink.TransferEncoding = System.Net.Mime.TransferEncoding.Base64;
+            htmlView.LinkedResources.Add(imagelink);
+            emailMessage.AlternateViews.Add(htmlView);
+
             SmtpClient mailClient = new SmtpClient();
             AlternateView av = AlternateView.CreateAlternateViewFromString(
-            "<html><body>Thank you for donating $ "+donation.amount+"</body></html>",
+            "<html><body>Thank you for donating $ " + donation.amount + "</body></html>",
             null, MediaTypeNames.Text.Html);
+
+
 
             emailMessage.AlternateViews.Add(av);
             emailMessage.IsBodyHtml = true;

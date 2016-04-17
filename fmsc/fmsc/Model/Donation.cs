@@ -10,18 +10,21 @@ namespace fmsc.Model
         public string userId;
         public double amount;
         public DateTime date;
+        public string displayName;
 
-        public Donation(string userId, double amount, DateTime date)
+        public Donation(string userId, double amount, DateTime date, string displayName)
         {
             this.userId = userId;
             this.amount = amount;
             this.date = date;
+            this.displayName = displayName;
         }
 
-        public Donation(double amount, DateTime date)
+        public Donation(double amount, DateTime date, string displayName)
         {
             this.amount = amount;
             this.date = date;
+            this.displayName = displayName;
         }
     }
 }

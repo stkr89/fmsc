@@ -19,7 +19,7 @@ namespace fmsc.DAO
 
             con.Open();
 
-            string SQLString = "SELECT R.First_Name, R.Last_Name, R.Email, R.Country, R.State, R.City, D.amount, D.date "+
+            string SQLString = "SELECT R.First_Name, R.Last_Name, R.Email, R.Country, R.State, R.City, D.amount, D.date, D.displayName "+
                                "FROM Register_FMSC R INNER JOIN Donate D ON R.Email = D.userId; ";
             SqlCommand checkIDTable = new SqlCommand(SQLString, con);
             SqlDataReader records = null;
@@ -35,7 +35,9 @@ namespace fmsc.DAO
                 {
                     User user = new User(records.GetString(0), records.GetString(1), records.GetString(2), records.GetString(3),
                                          records.GetString(4), records.GetString(5));
-                    Donation donation = new Donation(Convert.ToDouble(records.GetDecimal(6)), Convert.ToDateTime(records.GetString(7)));
+                    Donation donation = new Donation(Convert.ToDouble(records.GetDecimal(6)), 
+                                                     Convert.ToDateTime(records.GetString(7)),
+                                                     records.GetString(8));
 
                     UserDonation userDonation = new UserDonation(donation, user);
                     userDonations.Add(userDonation);
