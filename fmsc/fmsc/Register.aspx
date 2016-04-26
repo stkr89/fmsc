@@ -74,6 +74,22 @@
     $(function () {
         var input = document.getElementById('location');
         var autocomplete = new google.maps.places.Autocomplete(input);
+
+        var user = '<%= user %>';
+
+        user = JSON.parse(user);
+        
+        if (typeof user != 'undefined' && user != '') {
+            $('#fName').val('' + user.firstName + '');
+            $('#lName').val('' + user.lastName + '');
+            $('#email').val('' + user.email + '');
+            $('#password').val('' + user.password + '');
+            $('#mobile').val('' + user.mobile + '');
+            $('#address1').val('' + user.address1 + '');
+            $('#address2').val('' + user.address2 + '');
+            $('#location').val('' + user.city + ', ' + user.state + ', ' + user.country + '');
+            $('#zip').val('' + user.zip + '');
+        }
     });
 </script>
 </html>

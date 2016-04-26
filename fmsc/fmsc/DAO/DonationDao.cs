@@ -25,7 +25,7 @@ namespace fmsc.DAO
                 SqlCommand sqlCommand = new SqlCommand(SQLString, con);
                 sqlCommand.ExecuteNonQuery();
 
-                //sendReceipt(donation);              
+                sendReceipt(donation);              
 
                 return donation;
             }
@@ -43,23 +43,19 @@ namespace fmsc.DAO
             MailAddress messageTo = new MailAddress(donation.userId);
             emailMessage.To.Add(messageTo.Address);
             emailMessage.Subject = "Welcome to FMSC mail Test";
-            //emailMessage.Body = "Your registration was successfull.";
-            emailMessage.Body = "<HTML><BODY>" + message + "</BODY></HTML>";
+            emailMessage.Body = "<HTML><BODY>" + message + "Thank you for donating $ " + donation.amount + "</body></html>";
+
+
             AlternateView htmlView = AlternateView.CreateAlternateViewFromString(emailMessage.Body, null, "text/html");
-            LinkedResource imagelink = new LinkedResource(System.Web.HttpContext.Current.Server.MapPath(".") + @"\BT-logo.jpg", "image/jpg");
+            LinkedResource imagelink = new LinkedResource(HttpContext.Current.Server.MapPath(".") + @"\FMSCLOGO.jpg", "image/jpg");
             imagelink.ContentId = "imageId";
             imagelink.TransferEncoding = System.Net.Mime.TransferEncoding.Base64;
             htmlView.LinkedResources.Add(imagelink);
             emailMessage.AlternateViews.Add(htmlView);
 
+
+
             SmtpClient mailClient = new SmtpClient();
-            AlternateView av = AlternateView.CreateAlternateViewFromString(
-            "<html><body>Thank you for donating $ " + donation.amount + "</body></html>",
-            null, MediaTypeNames.Text.Html);
-
-
-
-            emailMessage.AlternateViews.Add(av);
             emailMessage.IsBodyHtml = true;
 
             mailClient.UseDefaultCredentials = true;// false;

@@ -1,6 +1,6 @@
 H:\fmsc Project\fmsc\fmsc\bin\fmsc.dll.config
 H:\fmsc Project\fmsc\fmsc\bin\fmsc.dll
 H:\fmsc Project\fmsc\fmsc\bin\fmsc.pdb
-H:\fmsc Project\fmsc\fmsc\obj\Debug\fmsc.csprojResolveAssemblyReference.cache
 H:\fmsc Project\fmsc\fmsc\obj\Debug\fmsc.dll
 H:\fmsc Project\fmsc\fmsc\obj\Debug\fmsc.pdb
+H:\fmsc Project\fmsc\fmsc\obj\Debug\fmsc.csprojResolveAssemblyReference.cache

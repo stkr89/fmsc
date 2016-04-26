@@ -2,6 +2,10 @@
     padding: 20px;
 }
 
+.container {
+    background-color: white;
+}
+
 .padding-top-20 {
     padding-top: 20px;
 }

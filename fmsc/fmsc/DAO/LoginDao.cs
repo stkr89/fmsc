@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 
 namespace fmsc.DAO
@@ -59,10 +60,6 @@ namespace fmsc.DAO
             SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["connection"].ConnectionString);
 
             con.Open();
-            //string SQLString = "UPDATE Register_FMSC SET First_Name = @First_Name , Last_Name = @Last_Name, "+
-            //                   "Email=@Email, Password=@Password, Mobile=@Mobile, Address1=@Address1, Address2=@Address2, "+
-            //                   "Country=@Country, State=@State, City=@City where Email = @Email";
-
             string SQLString = "UPDATE Register_FMSC SET First_Name = '"+ user.firstName + "' , Last_Name = '"+user.lastName+"', " +
                                "Email='"+user.email+"', Password='"+user.password+"', Mobile='"+user.mobile+"', "+
                                "Address1='"+user.address1+"', Address2='"+user.address2+"', " +
@@ -70,22 +67,83 @@ namespace fmsc.DAO
 
             SqlCommand cmd = new SqlCommand(SQLString, con);
 
-            //cmd.Parameters.AddWithValue("@First_Name", user.firstName);
-            //cmd.Parameters.AddWithValue("@Last_Name", user.lastName);
-            //cmd.Parameters.AddWithValue("@Email", user.email);
-            //cmd.Parameters.AddWithValue("@Password", user.password);
-            //cmd.Parameters.AddWithValue("@Mobile", user.mobile);
-            //cmd.Parameters.AddWithValue("@Address1", user.address1);
-            //cmd.Parameters.AddWithValue("@Address2", user.address2);
-            //cmd.Parameters.AddWithValue("@Country", user.country);
-            //cmd.Parameters.AddWithValue("@State", user.state);
-            //cmd.Parameters.AddWithValue("@City", user.city);
-
             cmd.ExecuteNonQuery();
 
             con.Close();
 
             return user;
+        }
+
+        public int sendPassword(String email)
+        {
+            //SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["connection"].ConnectionString);
+            string username = string.Empty;
+            string password = string.Empty;
+
+            string constr = "Data Source=itksqlexp8;Integrated Security=true; Database =sktokka_ConservationSchool ";
+            using (SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["connection"].ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT email, password FROM Register_FMSC WHERE email = @emailID"))
+                {
+                    cmd.Parameters.AddWithValue("@emailID", email.Trim());
+                    cmd.Connection = con;
+                    con.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        if (sdr.Read())
+                        {
+                            username = sdr["email"].ToString();
+                            password = sdr["password"].ToString();
+                        }
+                    }
+                    con.Close();
+                }
+            }
+            if (!string.IsNullOrEmpty(password))
+            {
+                System.Net.Mail.MailMessage mailMessage = new System.Net.Mail.MailMessage();
+                mailMessage.To.Add(email);
+                mailMessage.From = new MailAddress("pshriva@ilstu.edu");
+                mailMessage.Subject = "Password Recovery";
+                //mailMessage.Body = "hi";
+                //mailMessage.Body = string.Format("Hi {0},<br /><br />Your password is {1}.<br /><br />Thank You.<br />", username, password);
+
+                mailMessage.Body = string.Format("Hi {0},<br /><br />Your password is {1}.<br /><br />Thank You.<br /><br /> <img src=cid:myImageID width=\"80\" height=\"80\">", username, password);
+                mailMessage.IsBodyHtml = true;
+                AlternateView htmlView = AlternateView.CreateAlternateViewFromString(mailMessage.Body, null, "text/html");
+                //Add Image
+                LinkedResource theEmailImage = new LinkedResource(HttpContext.Current.Server.MapPath(".") + @"\FMSCLOGO.jpg", "image/jpg");
+                theEmailImage.ContentId = "myImageID";
+
+
+                //Add the Image to the Alternate view
+                htmlView.LinkedResources.Add(theEmailImage);
+
+                //Add view to the Email Message
+                mailMessage.AlternateViews.Add(htmlView);
+                SmtpClient smtpClient;
+                try
+                {
+                    smtpClient = new SmtpClient();
+                    smtpClient.Send(mailMessage);
+                }
+                catch (Exception exx)
+                {
+                    System.Diagnostics.Debug.WriteLine("error" + exx.Message);
+                }
+                // SmtpClient smtpClient = new SmtpClient("smtp.ilstu.edu");
+                //smtpClient.Send(mailMessage);
+                // smtp.Send(mm);
+                //lblMessage.ForeColor = Color.Green;
+                //lblMessage.Text = "Password has been sent to your email address.";
+                return 1;
+            }
+            else
+            {
+                //lblMessage.ForeColor = Color.Red;
+                //lblMessage.Text = "This email address does not match our records.";
+                return 0;
+            }
         }
     }
 }

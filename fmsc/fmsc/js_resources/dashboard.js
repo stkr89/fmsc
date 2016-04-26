@@ -7,6 +7,7 @@
 
 
             $scope.allDonations = eval("(" + allDonations + ")");
+            $scope.groupedDonations = eval("(" + groupedDonations + ")");
 
             $scope.showMap = showMap;
 
@@ -18,12 +19,10 @@
 
                 var arr = [['Country', 'Population']];
 
-                angular.forEach($scope.allDonations, function (val, index) {
-                    var temp = ['' + val.user.country + '', '' + val.user.country + ': $ ' + val.donation.amount];
+                angular.forEach($scope.groupedDonations, function (val, index) {
+                    var temp = ['' + val.country + '', '' + val.country + ': $ ' + val.amount];
                     arr.push(temp);
                 });
-
-                //console.log(angular.toJson(arr));
 
                 function drawMap() {
                     var data = google.visualization.arrayToDataTable(arr);

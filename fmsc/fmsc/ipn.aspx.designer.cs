@@ -10,16 +10,7 @@
 namespace fmsc {
     
     
-    public partial class Donate {
-        
-        /// <summary>
-        /// Nav control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::fmsc.header1 Nav;
+    public partial class ipn {
         
         /// <summary>
         /// form1 control.
@@ -31,21 +22,12 @@ namespace fmsc {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// displayName control.
+        /// status control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox displayName;
-        
-        /// <summary>
-        /// amount control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox amount;
+        protected global::System.Web.UI.WebControls.Label status;
     }
 }

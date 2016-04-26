@@ -14,6 +14,7 @@ namespace fmsc
     {
 
         public string allDonations = "";
+        public string groupedDonations = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,7 +25,17 @@ namespace fmsc
                 Response.Redirect("Login.aspx");
             }
 
-            allDonations = convertToJson(new DefaultDao().getDonations());
+            DefaultDao defaultDao = new DefaultDao();
+
+            allDonations = convertToJson(defaultDao.getDonations());
+            groupedDonations = convertToJson(defaultDao.getGroupedDonations());
+        }
+
+        private string convertToJson(List<GroupedDonation> list)
+        {
+            JavaScriptSerializer jss = new JavaScriptSerializer();
+
+            return jss.Serialize(list);
         }
 
         private string convertToJson(List<UserDonation> list)

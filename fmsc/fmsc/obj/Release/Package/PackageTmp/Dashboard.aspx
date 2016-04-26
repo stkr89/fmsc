@@ -25,6 +25,7 @@
             <tr>
               <th>#</th>
               <th>Name</th>
+              <th>Display Name</th>
               <th>Country</th>
               <th>State</th>
               <th>City</th>
@@ -36,10 +37,11 @@
             <tr ng-repeat="donation in allDonations | filter:search">
               <th scope="row">{{$index+1}}</th>
               <td>{{donation.user.firstName}} {{donation.user.lastName}}</td>
+              <td>{{donation.donation.displayName}}</td>
               <td>{{donation.user.country}}</td>
               <td>{{donation.user.state}}</td>
               <td>{{donation.user.city}}</td>
-              <td>$ {{donation.donation.amount}}.00</td>
+              <td>${{donation.donation.amount}}.00</td>
               <td>{{donation.donation.date | amDateFormat:'MM.DD.YYYY'}}</td>
             </tr>
           </tbody>
@@ -48,6 +50,7 @@
     </form>
 </body>
 <script>
-    var allDonations = '<%= allDonations %>';    
+    var allDonations = '<%= allDonations %>'; 
+    var groupedDonations = '<%= groupedDonations %>';
 </script>
 </html>

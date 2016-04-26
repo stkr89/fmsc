@@ -10,7 +10,7 @@
 namespace fmsc {
     
     
-    public partial class Donate {
+    public partial class Recovery {
         
         /// <summary>
         /// Nav control.
@@ -31,21 +31,12 @@ namespace fmsc {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// displayName control.
+        /// email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox displayName;
-        
-        /// <summary>
-        /// amount control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox amount;
+        protected global::System.Web.UI.WebControls.TextBox email;
     }
 }

@@ -1,7 +1,7 @@
 ﻿var DonateModule = angular.module('DonateModule', ['ngResource']);
 
 DonateModule.controller('DonateController', function ($scope) {
-    $scope.amount = 2.2;
+    $scope.userId = userId;
 
     $scope.checkAmount = checkAmount;
     $scope.checkProfanity = checkProfanity;

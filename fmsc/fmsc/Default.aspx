@@ -14,7 +14,7 @@
     <div class="container">
             <div class="padding-top-20">
                 <div class="alert alert-success" role="alert">
-                    Total donations: $ {{totalAmount}} = {{totalMeals}} meals
+                    <strong>Total donations:</strong> ${{totalAmount}} = {{totalMeals}} meals
                 </div>
             </div>
             <div align='center'>

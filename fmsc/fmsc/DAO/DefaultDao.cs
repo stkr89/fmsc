@@ -13,13 +13,12 @@ namespace fmsc.DAO
     {
         public List<UserDonation> getDonations()
         {
-            //SqlConnection con = DBConfig.getConnection();
-
             SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["connection"].ConnectionString);
 
             con.Open();
 
-            string SQLString = "SELECT R.First_Name, R.Last_Name, R.Email, R.Country, R.State, R.City, D.amount, D.date, D.displayName "+
+            string SQLString = "SELECT R.First_Name, R.Last_Name, R.Email, R.Country, R.State, R.City, "+
+                               "D.amount, D.date, D.displayName "+
                                "FROM Register_FMSC R INNER JOIN Donate D ON R.Email = D.userId; ";
             SqlCommand checkIDTable = new SqlCommand(SQLString, con);
             SqlDataReader records = null;
@@ -54,6 +53,32 @@ namespace fmsc.DAO
             catch (Exception exp) {
                 return null;
             }
+        }
+
+        internal List<GroupedDonation> getGroupedDonations()
+        {
+            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["connection"].ConnectionString);
+            con.Open();
+            string sql = "SELECT SUM(d.amount), r.Country FROM Donate d JOIN Register_FMSC r "+
+                         "ON d.userId = r.email GROUP BY r.Country";
+            SqlCommand sqlCommand = new SqlCommand(sql, con);
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+
+            List<GroupedDonation> list = null;
+
+            if (reader.HasRows)
+            {
+                list = new List<GroupedDonation>();
+
+                while (reader.Read())
+                {
+                    GroupedDonation groupedDonation = new GroupedDonation(Convert.ToDouble(reader.GetDecimal(0)), 
+                                                      reader.GetString(1));
+                    list.Add(groupedDonation);
+                }
+            }
+
+            return list;
         }
 
         internal List<User> search(string s, string p)

@@ -63,11 +63,15 @@
     <Content Include="Dashboard.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Donate.aspx" />
+    <Content Include="DonationSuccess.aspx" />
+    <Content Include="FMSCLOGO.jpg" />
     <Content Include="images\c2.jpg" />
     <Content Include="images\c3.jpg" />
     <Content Include="images\c4.jpg" />
     <Content Include="images\c5.jpg" />
+    <Content Include="images\fmsc-logo.png" />
     <Content Include="images\fmscAbtUs.jpg" />
+    <Content Include="ipn.aspx" />
     <Content Include="js_resources\angular-moment.min.js" />
     <Content Include="js_resources\angular.min.js" />
     <Content Include="js_resources\bootstrap.min.js" />
@@ -82,9 +86,12 @@
     <Content Include="nav.ascx" />
     <Content Include="images\logo.jpg" />
     <Content Include="Login.aspx" />
+    <Content Include="Recovery.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="views\header.html" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="about.aspx.cs">
@@ -118,6 +125,20 @@
     <Compile Include="Donate.aspx.designer.cs">
       <DependentUpon>Donate.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DonationSuccess.aspx.cs">
+      <DependentUpon>DonationSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DonationSuccess.aspx.designer.cs">
+      <DependentUpon>DonationSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ipn.aspx.cs">
+      <DependentUpon>ipn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ipn.aspx.designer.cs">
+      <DependentUpon>ipn.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Logout.aspx.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -125,6 +146,7 @@
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Model\GroupedDonation.cs" />
     <Compile Include="Model\UserDonation.cs" />
     <Compile Include="nav.ascx.cs">
       <DependentUpon>nav.ascx</DependentUpon>
@@ -143,6 +165,13 @@
     <Compile Include="Model\Donation.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recovery.aspx.cs">
+      <DependentUpon>Recovery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recovery.aspx.designer.cs">
+      <DependentUpon>Recovery.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -155,6 +184,7 @@
   <ItemGroup>
     <Content Include="css\bootstrap.min.css" />
     <None Include="Properties\PublishProfiles\fmsc.pubxml" />
+    <None Include="Properties\PublishProfiles\new.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
