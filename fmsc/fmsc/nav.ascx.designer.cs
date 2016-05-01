@@ -58,6 +58,24 @@ namespace fmsc {
         protected global::System.Web.UI.WebControls.HyperLink about;
         
         /// <summary>
+        /// faq control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink faq;
+        
+        /// <summary>
+        /// fmsc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink fmsc;
+        
+        /// <summary>
         /// dashboard control.
         /// </summary>
         /// <remarks>

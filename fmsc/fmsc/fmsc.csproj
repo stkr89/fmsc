@@ -39,6 +39,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CuteWebUI.AjaxUploader, Version=4.0.0.0, Culture=neutral, PublicKeyToken=bc00d4b0e43ec38d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\CuteWebUI.AjaxUploader.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -64,6 +68,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Donate.aspx" />
     <Content Include="DonationSuccess.aspx" />
+    <Content Include="FAQ.aspx" />
     <Content Include="FMSCLOGO.jpg" />
     <Content Include="images\c2.jpg" />
     <Content Include="images\c3.jpg" />
@@ -71,6 +76,7 @@
     <Content Include="images\c5.jpg" />
     <Content Include="images\fmsc-logo.png" />
     <Content Include="images\fmscAbtUs.jpg" />
+    <Content Include="images\logo.jpg" />
     <Content Include="ipn.aspx" />
     <Content Include="js_resources\angular-moment.min.js" />
     <Content Include="js_resources\angular.min.js" />
@@ -84,7 +90,7 @@
     <Content Include="js_resources\profane.js" />
     <Content Include="Logout.aspx" />
     <Content Include="nav.ascx" />
-    <Content Include="images\logo.jpg" />
+    <Content Include="images\logo1.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="Recovery.aspx" />
     <Content Include="Register.aspx" />
@@ -131,6 +137,13 @@
     </Compile>
     <Compile Include="DonationSuccess.aspx.designer.cs">
       <DependentUpon>DonationSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FAQ.aspx.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FAQ.aspx.designer.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
     </Compile>
     <Compile Include="ipn.aspx.cs">
       <DependentUpon>ipn.aspx</DependentUpon>
@@ -191,6 +204,12 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="uploads\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

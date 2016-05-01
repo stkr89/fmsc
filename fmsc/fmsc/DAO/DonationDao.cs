@@ -36,14 +36,14 @@ namespace fmsc.DAO
 
         private void sendReceipt(Donation donation)
         {
-            string message = "<img src=\"cid:imageId\" height=\"90\" width=\"80\">" + "Greetings, ";
+            string message = "<img src=\"cid:imageId\" height=\"90\" width=\"80\">";
             MailAddress messageFrom = new MailAddress("pshriva@ilstu.edu", "Pushpjeet");
             MailMessage emailMessage = new MailMessage();
             emailMessage.From = messageFrom;
             MailAddress messageTo = new MailAddress(donation.userId);
             emailMessage.To.Add(messageTo.Address);
-            emailMessage.Subject = "Welcome to FMSC mail Test";
-            emailMessage.Body = "<HTML><BODY>" + message + "Thank you for donating $ " + donation.amount + "</body></html>";
+            emailMessage.Subject = "Thank you for Donating to FMSC";
+            emailMessage.Body = "<HTML><BODY><br>Greetings,<p> On Behalf of Feed My Starving Children we would like to thank you for your contribution of  $" + donation.amount + "<p> Your Financial support helps us to continue our mission and assists to help our community</p>.<br><br>Thanks and best regards,</p>" + message + "  </body></html>";
 
 
             AlternateView htmlView = AlternateView.CreateAlternateViewFromString(emailMessage.Body, null, "text/html");

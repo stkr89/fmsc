@@ -19,6 +19,12 @@
                 <asp:HyperLink ID="about" class="nav-link" NavigateUrl="~/about.aspx" runat="server">About</asp:HyperLink>
             </li>
             <li class="nav-item">
+                <asp:HyperLink ID="faq" class="nav-link" NavigateUrl="~/FAQ.aspx" runat="server">FAQ</asp:HyperLink>
+            </li>
+            <li class="nav-item">
+                <asp:HyperLink ID="fmsc" class="nav-link" NavigateUrl="http://www.fmsc.org/home" runat="server">FMSC</asp:HyperLink>
+            </li>
+            <li class="nav-item">
                 <asp:HyperLink ID="dashboard" class="nav-link" NavigateUrl="~/Dashboard.aspx" runat="server" Visible="false">Dashboard</asp:HyperLink>
             </li>
         </ul>

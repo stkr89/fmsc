@@ -108,7 +108,7 @@ namespace fmsc.DAO
                 //mailMessage.Body = "hi";
                 //mailMessage.Body = string.Format("Hi {0},<br /><br />Your password is {1}.<br /><br />Thank You.<br />", username, password);
 
-                mailMessage.Body = string.Format("Hi {0},<br /><br />Your password is {1}.<br /><br />Thank You.<br /><br /> <img src=cid:myImageID width=\"80\" height=\"80\">", username, password);
+                mailMessage.Body = string.Format("Greetings {0},<br /><br />You recently requested your password for FMSC account.<br>Your password is {1}.<br /><br />Thank You.<br /><br /> <img src=cid:myImageID width=\"80\" height=\"80\">", username, password);
                 mailMessage.IsBodyHtml = true;
                 AlternateView htmlView = AlternateView.CreateAlternateViewFromString(mailMessage.Body, null, "text/html");
                 //Add Image

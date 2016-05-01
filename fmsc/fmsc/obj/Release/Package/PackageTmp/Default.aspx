@@ -68,7 +68,7 @@
 
         if (typeof doner != 'undefined' && typeof doner.user != 'undefinded' && typeof doner.user.email != 'undefined') {
 
-            var str = '<p>This pixel is donated by ';
+            var str = '<p>This meal is donated by ';
             str += '<strong>' + doner.donation.displayName +  '</strong> ';
             str += 'from '
             if (typeof doner.user.city != 'undefined') {

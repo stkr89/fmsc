@@ -31,6 +31,10 @@
                 <button type="submit" class="btn btn-primary-outline btn-sm">Login</button>
                 or
                 <a href="Register.aspx" class="pull-right">Sign Up</a>
+                <br><br>
+                <fieldset class="form-group">
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Recovery.aspx">Forgot Password?</asp:HyperLink>
+                </fieldset>
             </div>
         </div>                
     </div>

@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Donate.aspx.cs" Inherits="fmsc.Donate" %>
 <%@ Register TagPrefix="uc" TagName="Nav" Src="~/nav.ascx" %>
+<%@ Register TagPrefix="CuteWebUI" Namespace="CuteWebUI" Assembly="CuteWebUI.AjaxUploader" %>
 
 <!DOCTYPE html>
 
@@ -58,6 +59,7 @@ function mindonation(form,minprice)
                         class="form-control form-control-sm" placeholder="Enter display name"></asp:TextBox>
                 </fieldset>
                 <div class="col-lg-12"></div>
+                <div class="col-lg-12"></div>
                 <fieldset class="form-group col-md-3">
                     <label>Amount</label>
                     <asp:TextBox name="amount" ng-model="amount" type="number" ID="amount" runat="server"
@@ -77,6 +79,7 @@ function mindonation(form,minprice)
                     <input type="hidden" name="no_note" value="0">
                     <input type="hidden" name="currency_code" value="USD">
                     <input type="hidden" name="return" value="http://iis.it.ilstu.edu/368spr16/it3680113/App7/Donate.aspx?displayName={{displayName}}&id={{userId}}&amount={{amount}}">
+                    <input type="hidden" name="cancel_return" value="http://iis.it.ilstu.edu/368spr16/it3680113/App7/Donate.aspx">
                     <input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
                     <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
                     <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">

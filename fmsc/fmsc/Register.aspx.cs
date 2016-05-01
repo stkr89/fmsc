@@ -52,7 +52,16 @@ namespace fmsc
                     country = parts[0];
                 }
 
-                string role = sessionUser.email.Equals("sumit.tokkar@gmail.com") ? "ADMIN" : "VISITOR";
+                string role = "";
+
+                if(sessionUser != null)
+                {
+                    role = sessionUser.email.Equals("sumit.tokkar@gmail.com") ? "ADMIN" : "VISITOR";
+                }
+                else
+                {
+                    role = "VISITOR";
+                }
 
                 User user = new User(fName.Text, lName.Text, email.Text, password.Text, mobile.Text, address1.Text, address2.Text,
                                      country, state, city, zip.Text, role);
@@ -60,14 +69,15 @@ namespace fmsc
                 if (operation == "REGISTER")
                 {
                     user = new LoginDao().register(user);
-                    Session["user"] = user;
+                    //Session["user"] = user;
                     Response.Redirect("Login.aspx");
                 }
                 else if (operation == "UPDATE")
                 {
                     user = new LoginDao().update(user);
-                    Session["user"] = user;
-                    Response.Redirect("Default.aspx");
+                    //Session["user"] = user;
+                    //Response.Redirect("Default.aspx");
+                    Response.Redirect("Logout.aspx");
                 }
             }
         }
